@@ -4,9 +4,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, CheckCircle, DollarSign, FileText, Mail, Shield, TrendingUp, Users, Zap, Star, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle, DollarSign, FileText, Mail, Shield, TrendingUp, Users, Zap, Star, Sparkles, Play, Award, Clock, BarChart3 } from "lucide-react";
 import { AuthDialog } from "@/components/auth/auth-dialog";
 import { PayPathLogo } from "@/components/ui/paypath-logo";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 export default function LandingPage() {
   const [showAuth, setShowAuth] = useState(false);
@@ -23,33 +24,30 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-black overflow-hidden">
-      {/* Animated Background */}
-      <div className="fixed inset-0 geometric-bg animate-slide-diagonal opacity-30"></div>
-      <div className="fixed inset-0 dot-matrix animate-pulse-dot"></div>
-      
+    <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Navigation */}
-      <nav className="relative z-50 border-b border-black/10 bg-white/80 backdrop-blur-xl">
+      <nav className="relative z-50 border-b border-border/20 bg-background/80 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center space-x-3">
               <div className="relative">
-                <PayPathLogo className="h-10 w-10 text-black" />
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-black rounded-full animate-pulse"></div>
+                <PayPathLogo className="h-12 w-12 text-indigo-600" />
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full animate-pulse"></div>
               </div>
-              <span className="text-2xl font-black tracking-tight">PayPath</span>
+              <span className="text-2xl font-black tracking-tight gradient-text">PayPath</span>
             </div>
             <div className="flex items-center space-x-6">
+              <ThemeToggle />
               <Button 
                 variant="ghost" 
                 onClick={handleSignIn}
-                className="text-black hover:bg-black hover:text-white transition-all duration-300 font-medium"
+                className="text-foreground hover:bg-indigo-50 hover:text-indigo-700 dark:hover:bg-indigo-900/20 transition-all duration-300 font-semibold"
               >
                 Sign In
               </Button>
               <Button 
                 onClick={handleGetStarted} 
-                className="bg-black text-white hover:bg-gray-800 px-8 py-3 font-bold tracking-wide neomorphism hover-lift-bw"
+                className="btn-gradient text-white px-8 py-3 font-bold tracking-wide hover-lift"
               >
                 Get Started
               </Button>
@@ -59,40 +57,40 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-32 px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 mesh-gradient">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-12">
             {/* Floating Badge */}
-            <div className="animate-minimal-fade">
-              <Badge className="bg-black text-white hover:bg-gray-800 px-6 py-2 text-sm font-bold tracking-wide">
+            <div className="animate-fade-in-up">
+              <Badge className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 px-6 py-2 text-sm font-bold tracking-wide glass">
                 <Sparkles className="w-4 h-4 mr-2" />
                 PROFESSIONAL INVOICE MANAGEMENT
               </Badge>
             </div>
 
             {/* Main Headline */}
-            <div className="space-y-8 animate-minimal-scale">
-              <h1 className="text-7xl md:text-9xl font-black tracking-tighter leading-none">
-                <span className="block text-outline">SMART</span>
-                <span className="block">INVOICING</span>
-                <span className="block text-gray-400">FOR MODERN</span>
-                <span className="block text-black">FREELANCERS</span>
+            <div className="space-y-8 animate-fade-in-scale stagger-1">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-none">
+                <span className="block gradient-text">SMART</span>
+                <span className="block text-foreground">INVOICING</span>
+                <span className="block text-muted-foreground">FOR</span>
+                <span className="block text-outline">FREELANCERS</span>
               </h1>
               
               <div className="max-w-4xl mx-auto">
-                <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed">
-                  Create professional invoices, track payments, and get paid faster with PayPath. 
-                  The complete solution designed for the modern freelancer.
+                <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed">
+                  Create stunning invoices, track payments effortlessly, and get paid faster with PayPath. 
+                  The complete solution designed for modern professionals.
                 </p>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-minimal-slide">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up stagger-2">
               <Button 
                 size="lg" 
                 onClick={handleGetStarted}
-                className="bg-black text-white hover:bg-gray-800 text-xl px-12 py-6 font-black tracking-wide neomorphism hover-lift-bw group"
+                className="btn-gradient text-white text-xl px-12 py-6 font-black tracking-wide hover-lift group"
               >
                 START FREE TRIAL
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
@@ -100,28 +98,45 @@ export default function LandingPage() {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-2 border-black text-black hover:bg-black hover:text-white text-xl px-12 py-6 font-bold tracking-wide transition-all duration-300"
+                className="border-2 border-indigo-200 text-indigo-700 hover:bg-indigo-50 dark:border-indigo-800 dark:text-indigo-300 dark:hover:bg-indigo-900/20 text-xl px-12 py-6 font-bold tracking-wide transition-all duration-300 group"
               >
+                <Play className="mr-3 h-6 w-6" />
                 WATCH DEMO
               </Button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap justify-center items-center gap-8 pt-12 animate-fade-in-up stagger-3">
+              <div className="flex items-center space-x-2 text-muted-foreground">
+                <CheckCircle className="h-5 w-5 text-green-500" />
+                <span className="font-semibold">No Credit Card Required</span>
+              </div>
+              <div className="flex items-center space-x-2 text-muted-foreground">
+                <Shield className="h-5 w-5 text-blue-500" />
+                <span className="font-semibold">Bank-Level Security</span>
+              </div>
+              <div className="flex items-center space-x-2 text-muted-foreground">
+                <Star className="h-5 w-5 text-yellow-500" />
+                <span className="font-semibold">4.9/5 Rating</span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Floating Geometric Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 border-4 border-black/20 rotate-45 animate-float-geometric"></div>
-        <div className="absolute top-40 right-20 w-16 h-16 bg-black/10 rounded-full animate-float-geometric stagger-2"></div>
-        <div className="absolute bottom-20 left-1/4 w-12 h-12 border-2 border-black/30 animate-float-geometric stagger-3"></div>
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full opacity-20 animate-float"></div>
+        <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-lg opacity-20 animate-float-slow stagger-2"></div>
+        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-gradient-to-r from-cyan-400 to-indigo-400 rounded-full opacity-20 animate-float stagger-3"></div>
       </section>
 
       {/* Features Grid */}
-      <section className="relative py-32 px-4 sm:px-6 lg:px-8 bg-gray-50 diagonal-stripes">
+      <section className="relative py-32 px-4 sm:px-6 lg:px-8 gradient-bg-1">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black tracking-tighter mb-6 text-shadow-hard">
+            <h2 className="text-5xl md:text-6xl font-black tracking-tighter mb-6 gradient-text">
               EVERYTHING YOU NEED
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light">
               Streamline your invoice management with powerful features designed for professionals
             </p>
           </div>
@@ -132,48 +147,54 @@ export default function LandingPage() {
                 icon: FileText,
                 title: "PROFESSIONAL INVOICES",
                 description: "Create beautiful, branded invoices with customizable templates and automatic PDF generation.",
+                color: "from-indigo-500 to-purple-500",
                 delay: "stagger-1"
               },
               {
                 icon: TrendingUp,
                 title: "PAYMENT TRACKING",
                 description: "Monitor payment status, track overdue invoices, and get insights into your cash flow.",
+                color: "from-purple-500 to-pink-500",
                 delay: "stagger-2"
               },
               {
                 icon: Mail,
                 title: "AUTOMATED REMINDERS",
                 description: "Send automatic payment reminders and follow-ups to ensure you get paid on time.",
+                color: "from-pink-500 to-cyan-500",
                 delay: "stagger-3"
               },
               {
                 icon: Users,
                 title: "CLIENT MANAGEMENT",
                 description: "Organize client information, track project history, and maintain professional relationships.",
+                color: "from-cyan-500 to-indigo-500",
                 delay: "stagger-4"
               },
               {
-                icon: DollarSign,
+                icon: BarChart3,
                 title: "FINANCIAL REPORTS",
                 description: "Generate detailed reports on income, outstanding payments, and business performance.",
+                color: "from-indigo-500 to-purple-500",
                 delay: "stagger-5"
               },
               {
                 icon: Shield,
                 title: "SECURE & RELIABLE",
                 description: "Bank-level security with encrypted data storage and reliable cloud infrastructure.",
+                color: "from-purple-500 to-cyan-500",
                 delay: "stagger-1"
               }
             ].map((feature, index) => (
-              <Card key={index} className={`neomorphism hover-lift-bw border-0 animate-minimal-fade ${feature.delay} group`}>
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto mb-6 p-4 bg-black text-white rounded-2xl w-fit group-hover:scale-110 transition-transform duration-300">
+              <Card key={index} className={`neomorphism hover-lift border-0 animate-fade-in-up ${feature.delay} group overflow-hidden`}>
+                <CardHeader className="text-center pb-4 relative">
+                  <div className={`mx-auto mb-6 p-4 bg-gradient-to-r ${feature.color} text-white rounded-2xl w-fit group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                     <feature.icon className="h-8 w-8" />
                   </div>
-                  <CardTitle className="text-xl font-black tracking-wide">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl font-black tracking-wide text-foreground">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-600 text-center leading-relaxed">
+                  <CardDescription className="text-muted-foreground text-center leading-relaxed">
                     {feature.description}
                   </CardDescription>
                 </CardContent>
@@ -184,20 +205,31 @@ export default function LandingPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="relative py-32 px-4 sm:px-6 lg:px-8 bg-black text-white hexagon-pattern">
+      <section className="relative py-32 px-4 sm:px-6 lg:px-8 gradient-bg-2 text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12 text-center">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-black tracking-tighter mb-6 text-white">
+              TRUSTED BY THOUSANDS
+            </h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto font-light">
+              Join the growing community of professionals who trust PayPath
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "99.9%", label: "UPTIME GUARANTEE", delay: "stagger-1" },
-              { value: "25%", label: "FASTER PAYMENTS", delay: "stagger-2" },
-              { value: "10K+", label: "HAPPY USERS", delay: "stagger-3" }
+              { value: "99.9%", label: "UPTIME", icon: Award, delay: "stagger-1" },
+              { value: "25%", label: "FASTER PAYMENTS", icon: Clock, delay: "stagger-2" },
+              { value: "10K+", label: "HAPPY USERS", icon: Users, delay: "stagger-3" },
+              { value: "$2M+", label: "PROCESSED", icon: DollarSign, delay: "stagger-4" }
             ].map((stat, index) => (
-              <div key={index} className={`animate-minimal-scale ${stat.delay} group`}>
-                <div className="neomorphism-dark p-8 rounded-3xl hover-tilt">
-                  <div className="text-6xl md:text-7xl font-black mb-4 text-outline-white group-hover:text-white transition-all duration-300">
+              <div key={index} className={`animate-fade-in-scale ${stat.delay} group`}>
+                <div className="glass p-8 rounded-3xl hover-glow transition-all duration-300">
+                  <stat.icon className="h-12 w-12 mx-auto mb-4 text-white/80 group-hover:text-white transition-colors" />
+                  <div className="text-5xl md:text-6xl font-black mb-2 text-white group-hover:text-glow transition-all duration-300">
                     {stat.value}
                   </div>
-                  <div className="text-lg font-bold tracking-widest text-gray-300">
+                  <div className="text-lg font-bold tracking-widest text-white/70 group-hover:text-white/90 transition-colors">
                     {stat.label}
                   </div>
                 </div>
@@ -208,46 +240,56 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-32 px-4 sm:px-6 lg:px-8 bg-white scan-lines">
+      <section className="relative py-32 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-5xl mx-auto text-center">
           <div className="space-y-12">
-            <div className="animate-minimal-fade">
-              <h2 className="text-6xl md:text-7xl font-black tracking-tighter mb-8 glitch" data-text="READY TO STREAMLINE?">
-                READY TO STREAMLINE?
+            <div className="animate-fade-in-up">
+              <h2 className="text-6xl md:text-7xl font-black tracking-tighter mb-8 gradient-text">
+                READY TO GET STARTED?
               </h2>
-              <p className="text-2xl text-gray-600 mb-12 font-light max-w-3xl mx-auto">
+              <p className="text-2xl text-muted-foreground mb-12 font-light max-w-3xl mx-auto">
                 Join thousands of freelancers who trust PayPath to manage their invoices and get paid faster.
               </p>
             </div>
             
-            <div className="animate-minimal-scale">
+            <div className="animate-fade-in-scale stagger-1">
               <Button 
                 size="lg"
                 onClick={handleGetStarted}
-                className="bg-black text-white hover:bg-gray-800 text-2xl px-16 py-8 font-black tracking-widest neomorphism hover-lift-bw group"
+                className="btn-gradient text-white text-2xl px-16 py-8 font-black tracking-widest hover-lift group"
               >
                 START YOUR FREE TRIAL
                 <Zap className="ml-4 h-8 w-8 group-hover:rotate-12 transition-transform" />
               </Button>
+              <p className="text-sm text-muted-foreground mt-4 font-medium">
+                No credit card required • 14-day free trial • Cancel anytime
+              </p>
             </div>
           </div>
         </div>
 
         {/* Decorative Elements */}
-        <div className="absolute top-10 left-10 w-32 h-32 border-8 border-black/10 rounded-full animate-float-geometric"></div>
-        <div className="absolute bottom-10 right-10 w-24 h-24 bg-black/5 transform rotate-45 animate-float-geometric stagger-2"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-full animate-pulse-glow"></div>
+        <div className="absolute bottom-10 right-10 w-24 h-24 bg-gradient-to-r from-purple-400/20 to-cyan-400/20 rounded-lg animate-float stagger-2"></div>
       </section>
 
       {/* Footer */}
-      <footer className="relative bg-black text-white py-16 px-4 sm:px-6 lg:px-8">
+      <footer className="relative gradient-bg-2 text-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <PayPathLogo className="h-10 w-10 text-white" />
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex items-center space-x-4 mb-8 md:mb-0">
+              <PayPathLogo className="h-12 w-12 text-white" />
               <span className="text-2xl font-black tracking-tight">PayPath</span>
             </div>
-            <div className="text-gray-400 font-medium">
-              © 2025 PayPath. All rights reserved.
+            <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+              <div className="text-white/70 font-medium text-center md:text-left">
+                © 2025 PayPath. All rights reserved.
+              </div>
+              <div className="flex space-x-6">
+                <a href="#" className="text-white/70 hover:text-white transition-colors font-medium">Privacy</a>
+                <a href="#" className="text-white/70 hover:text-white transition-colors font-medium">Terms</a>
+                <a href="#" className="text-white/70 hover:text-white transition-colors font-medium">Support</a>
+              </div>
             </div>
           </div>
         </div>
