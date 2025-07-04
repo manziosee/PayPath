@@ -19,7 +19,7 @@ We take security seriously at PayPath. If you discover a security vulnerability,
 
 Instead, please:
 
-1. **Email us directly** at: security@paypath.com
+1. **Email us directly** at: oseemanzi3@gmail.com
 2. **Include the following information**:
    - Description of the vulnerability
    - Steps to reproduce the issue
@@ -29,7 +29,7 @@ Instead, please:
 
 3. **Use this email template**:
    ```
-   Subject: [SECURITY] Vulnerability Report - [Brief Description]
+   Subject: [SECURITY] PayPath Vulnerability Report - [Brief Description]
    
    Description:
    [Detailed description of the vulnerability]
@@ -55,8 +55,8 @@ Instead, please:
 
 For less critical security issues (like minor information disclosure), you can:
 
-1. Create a private GitHub issue
-2. Email us at security@paypath.com
+1. Create a private GitHub issue at https://github.com/manziosee/PayPath/issues
+2. Email us at oseemanzi3@gmail.com
 3. Contact us through our responsible disclosure program
 
 ## Response Timeline
@@ -168,15 +168,19 @@ We recognize security researchers who help make PayPath more secure:
 
 ## Contact Information
 
-- **Security Email**: security@paypath.com
-- **General Contact**: support@paypath.com
-- **Website**: https://paypath.com
-- **GitHub**: https://github.com/yourusername/paypath
+- **Security Email**: oseemanzi3@gmail.com
+- **General Contact**: oseemanzi3@gmail.com
+- **GitHub**: https://github.com/manziosee/PayPath
+- **Author**: MANZI NIYONGIRA Osee
 
 ## Legal
 
-This security policy is subject to our [Terms of Service](https://paypath.com/terms) and [Privacy Policy](https://paypath.com/privacy).
+This security policy is subject to our [Terms of Service](https://github.com/manziosee/PayPath) and [Privacy Policy](https://github.com/manziosee/PayPath).
 
 ---
 
 Thank you for helping keep PayPath and our users safe! 🔒
+
+**Maintained by:** MANZI NIYONGIRA Osee  
+**Contact:** oseemanzi3@gmail.com  
+**Repository:** https://github.com/manziosee/PayPath

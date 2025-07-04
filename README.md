@@ -64,8 +64,8 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/paypath.git
-   cd paypath
+   git clone https://github.com/manziosee/PayPath.git
+   cd PayPath
    ```
 
 2. **Install dependencies**
@@ -258,28 +258,33 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 📞 Support
 
 ### Community Support
-- **GitHub Issues** - [Report bugs or request features](https://github.com/yourusername/paypath/issues)
-- **Discussions** - [Join community discussions](https://github.com/yourusername/paypath/discussions)
+- **GitHub Issues** - [Report bugs or request features](https://github.com/manziosee/PayPath/issues)
+- **Discussions** - [Join community discussions](https://github.com/manziosee/PayPath/discussions)
 
 ### Professional Support
-- **Email** - support@paypath.com
-- **Documentation** - [docs.paypath.com](https://docs.paypath.com)
-- **Status Page** - [status.paypath.com](https://status.paypath.com)
+- **Email** - oseemanzi3@gmail.com
+- **GitHub** - [@manziosee](https://github.com/manziosee)
+
+---
+
+## 👨‍💻 Author
+
+**MANZI NIYONGIRA Osee**
+- GitHub: [@manziosee](https://github.com/manziosee)
+- Email: oseemanzi3@gmail.com
 
 ---
 
 ## 🌟 Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/paypath&type=Date)](https://star-history.com/#yourusername/paypath&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=manziosee/PayPath&type=Date)](https://star-history.com/#manziosee/PayPath&Date)
 
 ---
 
 <div align="center">
-  <p>Made with ❤️ by the PayPath team</p>
+  <p>Made with ❤️ by MANZI NIYONGIRA Osee</p>
   <p>
-    <a href="https://github.com/yourusername/paypath">GitHub</a> •
-    <a href="https://paypath.com">Website</a> •
-    <a href="https://docs.paypath.com">Documentation</a> •
-    <a href="mailto:support@paypath.com">Support</a>
+    <a href="https://github.com/manziosee/PayPath">GitHub</a> •
+    <a href="mailto:oseemanzi3@gmail.com">Contact</a>
   </p>
 </div>
