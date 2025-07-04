@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 PayPath
+Copyright (c) 2025 MANZI NIYONGIRA Osee
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -54,12 +54,13 @@ When using this software, please include the following attribution in your docum
 
 ```
 This application is built with PayPath, an open-source invoice management system.
-Original source: https://github.com/yourusername/paypath
+Original source: https://github.com/manziosee/PayPath
+Created by: MANZI NIYONGIRA Osee
 ```
 
 ### Commercial Use
 
-This software is free for commercial use under the MIT License. However, if you're building a competing SaaS product, we'd appreciate:
+This software is free for commercial use under the MIT License. However, if you're building a competing SaaS product, we\'d appreciate:
 
 1. **Attribution** - A link back to the original project
 2. **Contribution** - Consider contributing improvements back to the community
@@ -67,7 +68,7 @@ This software is free for commercial use under the MIT License. However, if you'
 
 ### Trademark Notice
 
-"PayPath" is a trademark of the PayPath project. While you're free to use the code under the MIT License, please don't use the PayPath name or logo for your own products without permission.
+"PayPath" is a trademark of MANZI NIYONGIRA Osee. While you're free to use the code under the MIT License, please don\'t use the PayPath name or logo for your own products without permission.
 
 ### Liability Disclaimer
 
@@ -87,7 +88,7 @@ This software does not collect any personal data by default. However, if you dep
 If you discover a security vulnerability, please:
 
 1. **Do not** create a public GitHub issue
-2. **Email** security@paypath.com with details
+2. **Email** oseemanzi3@gmail.com with details
 3. **Allow reasonable time** for the issue to be addressed
 4. **Follow responsible disclosure** practices
 
@@ -97,4 +98,4 @@ By contributing to this project, you agree that your contributions will be licen
 
 ---
 
-For questions about licensing, please contact: legal@paypath.com
+For questions about licensing, please contact: oseemanzi3@gmail.com

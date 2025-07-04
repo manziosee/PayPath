@@ -58,12 +58,12 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               flex items-center px-4 py-4 rounded-2xl text-sm font-bold tracking-wide transition-all duration-300 group
               ${isActive 
                 ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg' 
-                : 'text-muted-foreground hover:text-foreground hover:bg-indigo-50 dark:hover:bg-indigo-900/20'
+                : 'text-foreground hover:text-foreground hover:bg-indigo-50 dark:hover:bg-indigo-900/20'
               }
             `}
             onClick={() => setSidebarOpen(false)}
           >
-            <item.icon className={`mr-4 h-6 w-6 ${isActive ? 'text-white' : 'text-muted-foreground group-hover:text-indigo-600 dark:group-hover:text-indigo-400'}`} />
+            <item.icon className={`mr-4 h-6 w-6 ${isActive ? 'text-white' : 'text-foreground group-hover:text-indigo-600 dark:group-hover:text-indigo-400'}`} />
             {item.name.toUpperCase()}
           </Link>
         );
@@ -90,12 +90,12 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           <div className="mt-auto">
             <div className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-3xl p-8 glass">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-sm font-black tracking-widest">FREE PLAN</span>
-                <Badge variant="secondary" className="bg-white/20 text-white font-black">
+                <span className="text-sm font-black tracking-widest text-white">FREE PLAN</span>
+                <Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/20 font-black">
                   TRIAL
                 </Badge>
               </div>
-              <p className="text-xs text-white/80 mb-6 font-medium">
+              <p className="text-xs text-white/90 mb-6 font-medium">
                 Upgrade to unlock unlimited invoices and advanced features.
               </p>
               <Button size="sm" className="w-full bg-white text-indigo-600 hover:bg-white/90 font-black tracking-wide">
@@ -163,18 +163,18 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                 <DropdownMenuContent className="w-64 border-2 border-indigo-200 dark:border-indigo-800 glass" align="end" forceMount>
                   <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-2">
-                      <p className="text-sm font-black leading-none">John Doe</p>
+                      <p className="text-sm font-black leading-none text-foreground">John Doe</p>
                       <p className="text-xs leading-none text-muted-foreground font-medium">
                         john@example.com
                       </p>
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem className="font-bold">
+                  <DropdownMenuItem className="font-bold text-foreground">
                     <Settings className="mr-2 h-4 w-4" />
                     Settings
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={handleLogout} className="font-bold">
+                  <DropdownMenuItem onClick={handleLogout} className="font-bold text-foreground">
                     <LogOut className="mr-2 h-4 w-4" />
                     Log out
                   </DropdownMenuItem>

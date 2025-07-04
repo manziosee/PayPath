@@ -26,13 +26,13 @@ By participating in this project, you agree to abide by our Code of Conduct:
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/yourusername/paypath.git
-   cd paypath
+   git clone https://github.com/yourusername/PayPath.git
+   cd PayPath
    ```
 
 3. **Add the upstream remote**:
    ```bash
-   git remote add upstream https://github.com/originalowner/paypath.git
+   git remote add upstream https://github.com/manziosee/PayPath.git
    ```
 
 4. **Install dependencies**:
@@ -321,11 +321,11 @@ chore: update dependencies
 ### Community Support
 - **GitHub Discussions** - For general questions
 - **GitHub Issues** - For bug reports and feature requests
-- **Discord** - Real-time chat with contributors
+- **Email** - oseemanzi3@gmail.com
 
 ### Maintainer Contact
-- **Email** - maintainers@paypath.com
-- **Twitter** - @PayPathApp
+- **Email** - oseemanzi3@gmail.com
+- **GitHub** - [@manziosee](https://github.com/manziosee)
 
 ## 🙏 Recognition
 
@@ -334,5 +334,11 @@ Contributors will be recognized in:
 - Release notes
 - Project website
 - Annual contributor highlights
+
+---
+
+**Project Maintainer:** MANZI NIYONGIRA Osee  
+**Contact:** oseemanzi3@gmail.com  
+**Repository:** https://github.com/manziosee/PayPath
 
 Thank you for contributing to PayPath! 🚀

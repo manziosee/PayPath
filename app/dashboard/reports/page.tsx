@@ -47,48 +47,42 @@ export default function ReportsPage() {
 
   return (
     <DashboardLayout>
-      <div className="min-h-screen bg-white text-black">
+      <div className="min-h-screen bg-background text-foreground">
         {/* Animated Background */}
-        <div className="fixed inset-0 geometric-bg animate-slide-diagonal opacity-10 pointer-events-none"></div>
+        <div className="fixed inset-0 mesh-gradient opacity-30 pointer-events-none"></div>
         
         <div className="relative space-y-16">
           {/* Immersive Header */}
-          <div className="relative overflow-hidden">
-            <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-black/5"></div>
-              <div className="absolute top-0 left-1/4 w-96 h-96 bg-black/5 rounded-full mix-blend-multiply filter blur-3xl animate-float-geometric"></div>
-              <div className="absolute top-0 right-1/4 w-96 h-96 bg-black/3 rounded-full mix-blend-multiply filter blur-3xl animate-float-geometric stagger-2"></div>
-              <div className="absolute -bottom-8 left-1/3 w-96 h-96 bg-black/4 rounded-full mix-blend-multiply filter blur-3xl animate-float-geometric stagger-3"></div>
-            </div>
-            
-            <div className="relative neomorphism rounded-3xl p-16 mx-4 border-0">
-              <div className="text-center space-y-8">
-                <div className="inline-flex items-center space-x-3 bg-black text-white px-6 py-3 rounded-full animate-minimal-fade">
-                  <BarChart3 className="h-5 w-5" />
+          <div className="relative overflow-hidden mesh-gradient rounded-3xl">
+            <div className="relative">
+              <div className="text-center py-20 px-4">
+                <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-8 py-4 rounded-full shadow-2xl mb-8 animate-fade-in-up">
+                  <BarChart3 className="h-6 w-6" />
                   <span className="text-sm font-black tracking-widest">BUSINESS INTELLIGENCE</span>
                 </div>
                 
-                <div className="animate-minimal-scale">
-                  <h1 className="text-7xl md:text-8xl font-black tracking-tighter leading-none">
-                    <span className="block">ANALYTICS</span>
-                    <span className="block text-outline">DASHBOARD</span>
+                <div className="animate-fade-in-scale">
+                  <h1 className="text-7xl md:text-8xl font-black tracking-tighter leading-none mb-6">
+                    <span className="block gradient-text">ANALYTICS</span>
+                    <span className="block text-foreground">COMMAND</span>
+                    <span className="block text-outline">CENTER</span>
                   </h1>
                 </div>
                 
-                <p className="text-2xl text-gray-600 max-w-3xl mx-auto font-light animate-minimal-slide">
+                <p className="text-2xl text-muted-foreground max-w-3xl mx-auto font-light animate-fade-in-up stagger-1">
                   Dive deep into your business metrics with advanced analytics and actionable insights
                 </p>
                 
-                <div className="flex flex-wrap justify-center gap-6 pt-6 animate-minimal-fade stagger-2">
-                  <Button className="bg-black text-white hover:bg-gray-800 px-8 py-4 font-black tracking-widest neomorphism">
+                <div className="flex flex-wrap justify-center gap-6 pt-8 animate-fade-in-up stagger-2">
+                  <Button className="btn-gradient text-white px-8 py-4 font-black tracking-widest">
                     <Download className="h-4 w-4 mr-2" />
                     EXPORT REPORT
                   </Button>
-                  <Button variant="outline" className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 font-black tracking-widest">
+                  <Button variant="outline" className="border-2 border-white/20 text-white hover:bg-white/10 px-8 py-4 font-black tracking-widest">
                     <Calendar className="h-4 w-4 mr-2" />
                     CUSTOM RANGE
                   </Button>
-                  <Button variant="outline" className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 font-black tracking-widest">
+                  <Button variant="outline" className="border-2 border-white/20 text-white hover:bg-white/10 px-8 py-4 font-black tracking-widest">
                     <Filter className="h-4 w-4 mr-2" />
                     ADVANCED FILTERS
                   </Button>
@@ -106,7 +100,7 @@ export default function ReportsPage() {
                 icon: DollarSign,
                 trend: `+${monthlyGrowth}%`,
                 description: "vs last month",
-                accent: "bg-black",
+                gradient: "from-indigo-500 to-purple-500",
                 delay: "stagger-1"
               },
               {
@@ -115,7 +109,7 @@ export default function ReportsPage() {
                 icon: Users,
                 trend: `+${clientGrowth}%`,
                 description: "vs last month",
-                accent: "bg-gray-700",
+                gradient: "from-purple-500 to-pink-500",
                 delay: "stagger-2"
               },
               {
@@ -124,7 +118,7 @@ export default function ReportsPage() {
                 icon: FileText,
                 trend: "+12%",
                 description: "vs last month",
-                accent: "bg-gray-600",
+                gradient: "from-pink-500 to-cyan-500",
                 delay: "stagger-3"
               },
               {
@@ -133,27 +127,27 @@ export default function ReportsPage() {
                 icon: Target,
                 trend: "-2 days",
                 description: "improvement",
-                accent: "bg-gray-800",
+                gradient: "from-cyan-500 to-indigo-500",
                 delay: "stagger-4"
               }
             ].map((metric, index) => (
               <div key={index} className="group relative">
-                <div className="absolute inset-0 bg-black/5 rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition-opacity"></div>
-                <Card className={`relative neomorphism border-0 hover-lift-bw animate-minimal-fade ${metric.delay}`}>
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition-opacity"></div>
+                <Card className={`relative neomorphism border-0 hover-lift animate-fade-in-up ${metric.delay}`}>
                   <CardContent className="p-8">
                     <div className="flex items-center justify-between mb-6">
-                      <div className={`p-4 ${metric.accent} text-white rounded-2xl group-hover:scale-110 transition-transform`}>
+                      <div className={`p-4 bg-gradient-to-r ${metric.gradient} text-white rounded-2xl group-hover:scale-110 transition-transform shadow-lg`}>
                         <metric.icon className="h-8 w-8" />
                       </div>
-                      <div className="flex items-center text-black text-sm font-black">
+                      <div className="flex items-center gradient-text text-sm font-black">
                         <ArrowUpRight className="h-4 w-4 mr-1" />
                         {metric.trend}
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <p className="text-sm font-bold tracking-widest text-gray-600">{metric.title}</p>
-                      <p className="text-3xl font-black text-black">{metric.value}</p>
-                      <p className="text-xs text-gray-500 font-medium">{metric.description}</p>
+                      <p className="text-sm font-bold tracking-widest text-muted-foreground">{metric.title}</p>
+                      <p className="text-3xl font-black gradient-text">{metric.value}</p>
+                      <p className="text-xs text-muted-foreground font-medium">{metric.description}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -165,20 +159,20 @@ export default function ReportsPage() {
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Revenue Chart */}
             <div className="lg:col-span-2">
-              <Card className="neomorphism border-0 animate-minimal-slide">
-                <CardHeader className="border-b border-gray-100 pb-6">
+              <Card className="neomorphism border-0 animate-fade-in-up">
+                <CardHeader className="border-b border-border pb-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <div className="w-1 h-8 bg-black"></div>
+                      <div className="w-1 h-8 bg-gradient-to-b from-indigo-500 to-purple-500"></div>
                       <div>
-                        <CardTitle className="text-2xl font-black tracking-tight">REVENUE TRENDS</CardTitle>
-                        <CardDescription className="text-gray-600 font-medium">Monthly performance overview</CardDescription>
+                        <CardTitle className="text-2xl font-black tracking-tight gradient-text">REVENUE TRENDS</CardTitle>
+                        <CardDescription className="text-muted-foreground font-medium">Monthly performance overview</CardDescription>
                       </div>
                     </div>
                     <Tabs value={activeChart} onValueChange={setActiveChart}>
-                      <TabsList className="bg-gray-100">
-                        <TabsTrigger value="revenue" className="font-bold data-[state=active]:bg-black data-[state=active]:text-white">REVENUE</TabsTrigger>
-                        <TabsTrigger value="invoices" className="font-bold data-[state=active]:bg-black data-[state=active]:text-white">INVOICES</TabsTrigger>
+                      <TabsList className="bg-muted">
+                        <TabsTrigger value="revenue" className="font-bold data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-500 data-[state=active]:to-purple-500 data-[state=active]:text-white">REVENUE</TabsTrigger>
+                        <TabsTrigger value="invoices" className="font-bold data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-500 data-[state=active]:to-purple-500 data-[state=active]:text-white">INVOICES</TabsTrigger>
                       </TabsList>
                     </Tabs>
                   </div>
@@ -189,18 +183,18 @@ export default function ReportsPage() {
                       <div key={data.month} className="flex flex-col items-center space-y-3 flex-1 group">
                         <div className="relative w-full">
                           <div 
-                            className="bg-black hover:bg-gray-700 rounded-t-xl transition-all duration-1000 hover:scale-105"
+                            className="bg-gradient-to-t from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 rounded-t-xl transition-all duration-1000 hover:scale-105"
                             style={{ 
                               height: activeChart === 'revenue' 
                                 ? `${(data.revenue / Math.max(...chartData.map(d => d.revenue))) * 240}px`
                                 : `${(data.invoices / Math.max(...chartData.map(d => d.invoices))) * 240}px`
                             }}
                           ></div>
-                          <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-xs font-black text-black bg-white px-3 py-1 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-xs font-black gradient-text bg-background px-3 py-1 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
                             {activeChart === 'revenue' ? `$${data.revenue}` : data.invoices}
                           </div>
                         </div>
-                        <span className="text-sm font-black text-gray-600 tracking-widest">{data.month}</span>
+                        <span className="text-sm font-black text-muted-foreground tracking-widest">{data.month}</span>
                       </div>
                     ))}
                   </div>
@@ -211,7 +205,7 @@ export default function ReportsPage() {
             {/* Sidebar */}
             <div className="space-y-8">
               {/* Monthly Goals */}
-              <Card className="bg-black text-white border-0 neomorphism-dark animate-minimal-scale stagger-2">
+              <Card className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-0 glass animate-fade-in-scale stagger-2">
                 <CardContent className="p-8">
                   <div className="space-y-6">
                     <div className="flex items-center space-x-3">
@@ -226,7 +220,7 @@ export default function ReportsPage() {
                       ].map((goal, index) => (
                         <div key={index}>
                           <div className="flex justify-between text-sm mb-3 font-medium">
-                            <span className="text-gray-300">{goal.label}</span>
+                            <span className="text-white/80">{goal.label}</span>
                             <span className="font-black text-white">{goal.value}%</span>
                           </div>
                           <Progress value={goal.value} className="h-3 bg-white/20" />
@@ -238,28 +232,30 @@ export default function ReportsPage() {
               </Card>
 
               {/* Top Performers */}
-              <Card className="neomorphism border-0 animate-minimal-scale stagger-3">
+              <Card className="neomorphism border-0 animate-fade-in-scale stagger-3">
                 <CardHeader>
-                  <CardTitle className="text-xl font-black tracking-wide flex items-center">
+                  <CardTitle className="text-xl font-black tracking-wide flex items-center gradient-text">
                     <Star className="h-5 w-5 mr-2" />
                     TOP PERFORMERS
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {mockClients.slice(0, 3).map((client, index) => (
-                    <div key={client.id} className="flex items-center justify-between p-4 rounded-xl neomorphism-inset group hover-lift-bw">
+                    <div key={client.id} className="flex items-center justify-between p-4 rounded-xl neomorphism-inset group hover-lift">
                       <div className="flex items-center space-x-4">
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-black ${
-                          index === 0 ? 'bg-black' : index === 1 ? 'bg-gray-700' : 'bg-gray-600'
+                          index === 0 ? 'bg-gradient-to-r from-indigo-500 to-purple-500' : 
+                          index === 1 ? 'bg-gradient-to-r from-purple-500 to-pink-500' : 
+                          'bg-gradient-to-r from-pink-500 to-cyan-500'
                         }`}>
                           {index + 1}
                         </div>
                         <div>
-                          <p className="font-black text-black">{client.company}</p>
-                          <p className="text-xs text-gray-500 font-medium">{client.name}</p>
+                          <p className="font-black gradient-text">{client.company}</p>
+                          <p className="text-xs text-muted-foreground font-medium">{client.name}</p>
                         </div>
                       </div>
-                      <Badge className="bg-black text-white hover:bg-black font-black">
+                      <Badge className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 font-black">
                         ${(2000 + index * 500).toLocaleString()}
                       </Badge>
                     </div>
@@ -272,28 +268,28 @@ export default function ReportsPage() {
           {/* Insights Grid */}
           <div className="grid md:grid-cols-2 gap-8">
             {/* Payment Methods */}
-            <Card className="neomorphism border-0 animate-minimal-slide stagger-2">
+            <Card className="neomorphism border-0 animate-fade-in-up stagger-2">
               <CardHeader>
-                <CardTitle className="text-xl font-black tracking-wide flex items-center">
+                <CardTitle className="text-xl font-black tracking-wide flex items-center gradient-text">
                   <BarChart3 className="h-5 w-5 mr-2" />
                   PAYMENT METHODS
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 {[
-                  { method: "Bank Transfer", percentage: 65, color: "bg-black" },
-                  { method: "Credit Card", percentage: 25, color: "bg-gray-700" },
-                  { method: "PayPal", percentage: 10, color: "bg-gray-500" }
+                  { method: "Bank Transfer", percentage: 65, gradient: "from-indigo-500 to-purple-500" },
+                  { method: "Credit Card", percentage: 25, gradient: "from-purple-500 to-pink-500" },
+                  { method: "PayPal", percentage: 10, gradient: "from-pink-500 to-cyan-500" }
                 ].map((method, index) => (
                   <div key={index} className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
-                      <div className={`w-5 h-5 ${method.color} rounded-full`}></div>
+                      <div className={`w-5 h-5 bg-gradient-to-r ${method.gradient} rounded-full`}></div>
                       <span className="text-sm font-black">{method.method}</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <span className="text-sm text-gray-600 font-medium">{method.percentage}%</span>
-                      <div className="w-24 h-3 bg-gray-200 rounded-full">
-                        <div className={`h-3 ${method.color} rounded-full transition-all duration-1000`} style={{ width: `${method.percentage}%` }}></div>
+                      <span className="text-sm text-muted-foreground font-medium">{method.percentage}%</span>
+                      <div className="w-24 h-3 bg-muted rounded-full">
+                        <div className={`h-3 bg-gradient-to-r ${method.gradient} rounded-full transition-all duration-1000`} style={{ width: `${method.percentage}%` }}></div>
                       </div>
                     </div>
                   </div>
@@ -302,23 +298,23 @@ export default function ReportsPage() {
             </Card>
 
             {/* Quick Insights */}
-            <Card className="neomorphism border-0 animate-minimal-slide stagger-3">
+            <Card className="neomorphism border-0 animate-fade-in-up stagger-3">
               <CardHeader>
-                <CardTitle className="text-xl font-black tracking-wide flex items-center">
+                <CardTitle className="text-xl font-black tracking-wide flex items-center gradient-text">
                   <Zap className="h-5 w-5 mr-2" />
                   QUICK INSIGHTS
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {[
-                  { title: "Best performing month", value: "June 2025", subtitle: "$8,900 revenue", bg: "bg-black" },
-                  { title: "Fastest paying client", value: "TechCorp Solutions", subtitle: "Average 2 days", bg: "bg-gray-700" },
-                  { title: "Growth trend", value: "+15.2% MoM", subtitle: "Consistent growth", bg: "bg-gray-600" }
+                  { title: "Best performing month", value: "June 2025", subtitle: "$8,900 revenue", gradient: "from-indigo-500 to-purple-500" },
+                  { title: "Fastest paying client", value: "TechCorp Solutions", subtitle: "Average 2 days", gradient: "from-purple-500 to-pink-500" },
+                  { title: "Growth trend", value: "+15.2% MoM", subtitle: "Consistent growth", gradient: "from-pink-500 to-cyan-500" }
                 ].map((insight, index) => (
-                  <div key={index} className={`p-6 ${insight.bg} text-white rounded-xl neomorphism-dark hover-lift-bw`}>
-                    <p className="text-sm font-medium text-gray-300">{insight.title}</p>
+                  <div key={index} className={`p-6 bg-gradient-to-r ${insight.gradient} text-white rounded-xl glass hover-lift`}>
+                    <p className="text-sm font-medium text-white/80">{insight.title}</p>
                     <p className="text-lg font-black text-white">{insight.value}</p>
-                    <p className="text-xs text-gray-400 font-medium">{insight.subtitle}</p>
+                    <p className="text-xs text-white/70 font-medium">{insight.subtitle}</p>
                   </div>
                 ))}
               </CardContent>

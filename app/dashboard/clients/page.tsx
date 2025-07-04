@@ -53,40 +53,52 @@ export default function ClientsPage() {
 
   return (
     <DashboardLayout>
-      <div className="min-h-screen bg-white text-black">
+      <div className="min-h-screen bg-background text-foreground">
         {/* Animated Background */}
-        <div className="fixed inset-0 hexagon-pattern opacity-10 pointer-events-none"></div>
+        <div className="fixed inset-0 mesh-gradient opacity-30 pointer-events-none"></div>
         
-        <div className="relative space-y-12">
+        <div className="relative space-y-16">
           {/* Header */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-            <div className="space-y-4 animate-minimal-fade">
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-12 bg-black"></div>
-                <div>
-                  <h1 className="text-5xl font-black tracking-tighter">CLIENTS</h1>
-                  <p className="text-xl text-gray-600 font-light">Manage your client relationships and contact information.</p>
+          <div className="relative overflow-hidden mesh-gradient rounded-3xl">
+            <div className="relative">
+              <div className="text-center py-20 px-4">
+                <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-8 py-4 rounded-full shadow-2xl mb-8 animate-fade-in-up">
+                  <Users className="h-6 w-6" />
+                  <span className="text-sm font-black tracking-widest">CLIENT MANAGEMENT</span>
+                </div>
+                
+                <div className="animate-fade-in-scale">
+                  <h1 className="text-7xl md:text-8xl font-black tracking-tighter leading-none mb-6">
+                    <span className="block gradient-text">CLIENT</span>
+                    <span className="block text-foreground">RELATIONSHIP</span>
+                    <span className="block text-outline">HUB</span>
+                  </h1>
+                </div>
+                
+                <p className="text-2xl text-muted-foreground max-w-3xl mx-auto font-light animate-fade-in-up stagger-1">
+                  Manage your client relationships and contact information with ease
+                </p>
+                
+                <div className="flex justify-center pt-8 animate-fade-in-up stagger-2">
+                  <Button 
+                    onClick={() => setShowCreateClient(true)}
+                    className="btn-gradient text-white px-12 py-6 text-xl font-black tracking-widest hover-lift group"
+                  >
+                    <Plus className="h-6 w-6 mr-3 group-hover:rotate-90 transition-transform" />
+                    ADD CLIENT
+                  </Button>
                 </div>
               </div>
-            </div>
-            <div className="mt-6 lg:mt-0 animate-minimal-scale">
-              <Button 
-                onClick={() => setShowCreateClient(true)}
-                className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg font-bold tracking-wide neomorphism hover-lift-bw group"
-              >
-                <Plus className="h-5 w-5 mr-2 group-hover:rotate-90 transition-transform" />
-                ADD CLIENT
-              </Button>
             </div>
           </div>
 
           {/* Stats Overview */}
-          <Card className="neomorphism border-0 animate-minimal-slide">
-            <CardHeader className="border-b border-gray-100">
+          <Card className="neomorphism border-0 animate-fade-in-up">
+            <CardHeader className="border-b border-border">
               <div className="flex items-center space-x-3">
-                <div className="w-1 h-8 bg-black"></div>
+                <div className="w-1 h-8 bg-gradient-to-b from-indigo-500 to-purple-500"></div>
                 <div>
-                  <CardTitle className="text-2xl font-black tracking-tight flex items-center">
+                  <CardTitle className="text-2xl font-black tracking-tight flex items-center gradient-text">
                     <Users className="h-6 w-6 mr-3" />
                     CLIENT OVERVIEW
                   </CardTitle>
@@ -100,27 +112,27 @@ export default function ClientsPage() {
                     title: "TOTAL CLIENTS",
                     value: clients.length,
                     icon: Users,
-                    accent: "bg-black"
+                    gradient: "from-indigo-500 to-purple-500"
                   },
                   {
                     title: "TOTAL REVENUE",
                     value: `$${totalRevenue.toLocaleString()}`,
                     icon: DollarSign,
-                    accent: "bg-gray-700"
+                    gradient: "from-purple-500 to-pink-500"
                   },
                   {
                     title: "OUTSTANDING",
                     value: `$${outstandingAmount.toLocaleString()}`,
                     icon: TrendingUp,
-                    accent: "bg-gray-600"
+                    gradient: "from-pink-500 to-cyan-500"
                   }
                 ].map((stat, index) => (
                   <div key={index} className="text-center group">
-                    <div className={`mx-auto mb-4 p-4 ${stat.accent} text-white rounded-2xl w-fit group-hover:scale-110 transition-transform`}>
+                    <div className={`mx-auto mb-4 p-4 bg-gradient-to-r ${stat.gradient} text-white rounded-2xl w-fit group-hover:scale-110 transition-transform shadow-lg`}>
                       <stat.icon className="h-8 w-8" />
                     </div>
-                    <div className="text-3xl font-black text-black mb-2">{stat.value}</div>
-                    <div className="text-sm font-bold tracking-widest text-gray-600">{stat.title}</div>
+                    <div className="text-3xl font-black gradient-text mb-2">{stat.value}</div>
+                    <div className="text-sm font-bold tracking-widest text-muted-foreground">{stat.title}</div>
                   </div>
                 ))}
               </div>
@@ -128,16 +140,16 @@ export default function ClientsPage() {
           </Card>
 
           {/* Search */}
-          <Card className="neomorphism border-0 animate-minimal-fade stagger-2">
+          <Card className="neomorphism border-0 animate-fade-in-up stagger-2">
             <CardHeader>
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
                 <div className="relative flex-1 max-w-md">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
                   <Input
                     placeholder="Search clients..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-12 h-12 border-2 border-gray-200 focus:border-black font-medium"
+                    className="pl-12 h-12 border-2 border-indigo-200 focus:border-indigo-500 font-medium"
                   />
                 </div>
               </div>
@@ -149,101 +161,104 @@ export default function ClientsPage() {
             {filteredClients.map((client, index) => {
               const stats = getClientStats(client.id);
               return (
-                <Card key={client.id} className={`neomorphism border-0 hover-lift-bw animate-minimal-scale stagger-${(index % 3) + 1} group`}>
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start justify-between">
-                      <div className="flex items-center space-x-4">
-                        <div className="relative">
-                          <Avatar className="h-16 w-16 border-4 border-gray-100">
-                            <AvatarImage src={`https://api.dicebear.com/7.x/initials/svg?seed=${client.name}`} />
-                            <AvatarFallback className="text-lg font-black bg-black text-white">
-                              {client.name.split(' ').map(n => n[0]).join('')}
-                            </AvatarFallback>
-                          </Avatar>
-                          <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-black rounded-full border-2 border-white"></div>
+                <div key={client.id} className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-lg opacity-25 group-hover:opacity-40 transition-opacity"></div>
+                  <Card className={`relative neomorphism border-0 hover-lift animate-fade-in-scale stagger-${(index % 3) + 1}`}>
+                    <CardHeader className="pb-4">
+                      <div className="flex items-start justify-between">
+                        <div className="flex items-center space-x-4">
+                          <div className="relative">
+                            <Avatar className="h-16 w-16 border-4 border-indigo-200">
+                              <AvatarImage src={`https://api.dicebear.com/7.x/initials/svg?seed=${client.name}`} />
+                              <AvatarFallback className="text-lg font-black bg-gradient-to-r from-indigo-500 to-purple-500 text-white">
+                                {client.name.split(' ').map(n => n[0]).join('')}
+                              </AvatarFallback>
+                            </Avatar>
+                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full border-2 border-background"></div>
+                          </div>
+                          <div>
+                            <CardTitle className="text-xl font-black tracking-tight gradient-text">{client.name}</CardTitle>
+                            <CardDescription className="flex items-center font-medium">
+                              <Building className="h-4 w-4 mr-2" />
+                              {client.company}
+                            </CardDescription>
+                          </div>
                         </div>
-                        <div>
-                          <CardTitle className="text-xl font-black tracking-tight">{client.name}</CardTitle>
-                          <CardDescription className="flex items-center font-medium">
-                            <Building className="h-4 w-4 mr-2" />
-                            {client.company}
-                          </CardDescription>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button variant="ghost" size="sm" className="hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500 hover:text-white">
+                              <MoreHorizontal className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end" className="border-2 border-indigo-200">
+                            <DropdownMenuItem onClick={() => handleAction('edit', client.id)}>
+                              <Edit className="mr-2 h-4 w-4" />
+                              Edit
+                            </DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => handleAction('email', client.id)}>
+                              <Mail className="mr-2 h-4 w-4" />
+                              Send Email
+                            </DropdownMenuItem>
+                            <DropdownMenuItem 
+                              onClick={() => handleAction('delete', client.id)}
+                              className="text-red-600"
+                            >
+                              <Trash2 className="mr-2 h-4 w-4" />
+                              Delete
+                            </DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                      <div className="space-y-3">
+                        <div className="flex items-center text-sm text-muted-foreground font-medium">
+                          <Mail className="h-4 w-4 mr-3" />
+                          {client.email}
                         </div>
-                      </div>
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="sm" className="hover:bg-black hover:text-white">
-                            <MoreHorizontal className="h-4 w-4" />
-                          </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="border-2 border-gray-200">
-                          <DropdownMenuItem onClick={() => handleAction('edit', client.id)}>
-                            <Edit className="mr-2 h-4 w-4" />
-                            Edit
-                          </DropdownMenuItem>
-                          <DropdownMenuItem onClick={() => handleAction('email', client.id)}>
-                            <Mail className="mr-2 h-4 w-4" />
-                            Send Email
-                          </DropdownMenuItem>
-                          <DropdownMenuItem 
-                            onClick={() => handleAction('delete', client.id)}
-                            className="text-red-600"
-                          >
-                            <Trash2 className="mr-2 h-4 w-4" />
-                            Delete
-                          </DropdownMenuItem>
-                        </DropdownMenuContent>
-                      </DropdownMenu>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="space-y-3">
-                      <div className="flex items-center text-sm text-gray-600 font-medium">
-                        <Mail className="h-4 w-4 mr-3" />
-                        {client.email}
-                      </div>
-                      <div className="flex items-center text-sm text-gray-600 font-medium">
-                        <Phone className="h-4 w-4 mr-3" />
-                        {client.phone}
-                      </div>
-                    </div>
-                    
-                    <div className="pt-4 border-t border-gray-100">
-                      <div className="grid grid-cols-2 gap-6 text-center">
-                        <div className="space-y-1">
-                          <div className="text-2xl font-black text-black">{stats.totalInvoices}</div>
-                          <div className="text-xs font-bold tracking-widest text-gray-500">INVOICES</div>
-                        </div>
-                        <div className="space-y-1">
-                          <div className="text-2xl font-black text-black">${stats.paidAmount.toLocaleString()}</div>
-                          <div className="text-xs font-bold tracking-widest text-gray-500">PAID</div>
+                        <div className="flex items-center text-sm text-muted-foreground font-medium">
+                          <Phone className="h-4 w-4 mr-3" />
+                          {client.phone}
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                      
+                      <div className="pt-4 border-t border-border">
+                        <div className="grid grid-cols-2 gap-6 text-center">
+                          <div className="space-y-1">
+                            <div className="text-2xl font-black gradient-text">{stats.totalInvoices}</div>
+                            <div className="text-xs font-bold tracking-widest text-muted-foreground">INVOICES</div>
+                          </div>
+                          <div className="space-y-1">
+                            <div className="text-2xl font-black gradient-text">${stats.paidAmount.toLocaleString()}</div>
+                            <div className="text-xs font-bold tracking-widest text-muted-foreground">PAID</div>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               );
             })}
           </div>
 
           {/* Empty State */}
           {filteredClients.length === 0 && (
-            <Card className="neomorphism border-0 animate-minimal-scale">
+            <Card className="neomorphism border-0 animate-fade-in-scale">
               <CardContent className="text-center py-20">
                 <div className="space-y-6">
-                  <div className="mx-auto w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center">
-                    <Users className="h-10 w-10 text-gray-400" />
+                  <div className="mx-auto w-20 h-20 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <Users className="h-10 w-10 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-black text-black mb-2">NO CLIENTS FOUND</h3>
-                    <p className="text-gray-600 font-medium mb-6">
+                    <h3 className="text-2xl font-black gradient-text mb-2">NO CLIENTS FOUND</h3>
+                    <p className="text-muted-foreground font-medium mb-6">
                       {searchQuery ? "Try adjusting your search criteria" : "Add your first client to get started"}
                     </p>
                   </div>
                   {!searchQuery && (
                     <Button 
                       onClick={() => setShowCreateClient(true)}
-                      className="bg-black text-white hover:bg-gray-800 px-8 py-3 font-bold tracking-wide"
+                      className="btn-gradient text-white px-8 py-3 font-bold tracking-wide"
                     >
                       <Plus className="h-4 w-4 mr-2" />
                       ADD CLIENT
