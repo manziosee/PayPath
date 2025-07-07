@@ -88,14 +88,14 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           
           {/* Upgrade Banner */}
           <div className="mt-auto">
-            <div className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-3xl p-8 glass">
+            <div className="upgrade-banner text-white rounded-3xl p-8 glass">
               <div className="flex items-center justify-between mb-4">
-                <span className="text-sm font-black tracking-widest text-white">FREE PLAN</span>
+                <span className="text-sm font-black tracking-widest upgrade-text">FREE PLAN</span>
                 <Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/20 font-black">
                   TRIAL
                 </Badge>
               </div>
-              <p className="text-xs text-white/90 mb-6 font-medium">
+              <p className="text-xs upgrade-text-muted mb-6 font-medium">
                 Upgrade to unlock unlimited invoices and advanced features.
               </p>
               <Button size="sm" className="w-full bg-white text-indigo-600 hover:bg-white/90 font-black tracking-wide">
@@ -163,18 +163,18 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                 <DropdownMenuContent className="w-64 border-2 border-indigo-200 dark:border-indigo-800 glass" align="end" forceMount>
                   <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-2">
-                      <p className="text-sm font-black leading-none text-foreground">John Doe</p>
-                      <p className="text-xs leading-none text-muted-foreground font-medium">
+                      <p className="text-sm font-black leading-none responsive-text">John Doe</p>
+                      <p className="text-xs leading-none responsive-text-muted font-medium">
                         john@example.com
                       </p>
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem className="font-bold text-foreground">
+                  <DropdownMenuItem className="font-bold responsive-text">
                     <Settings className="mr-2 h-4 w-4" />
                     Settings
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={handleLogout} className="font-bold text-foreground">
+                  <DropdownMenuItem onClick={handleLogout} className="font-bold responsive-text">
                     <LogOut className="mr-2 h-4 w-4" />
                     Log out
                   </DropdownMenuItem>

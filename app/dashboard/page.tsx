@@ -76,7 +76,7 @@ export default function DashboardPage() {
                 </div>
                 
                 <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto font-light animate-fade-in-up stagger-1">
-                  Here's your business overview and latest activity
+                  Here&#39;s your business overview and latest activity
                 </p>
                 
                 <div className="flex justify-center pt-6 md:pt-8 animate-fade-in-up stagger-2">
@@ -270,25 +270,25 @@ export default function DashboardPage() {
               </Card>
 
               {/* Performance Insight */}
-              <Card className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-0 glass animate-fade-in-scale stagger-4">
+              <Card className="performance-card text-white border-0 glass animate-fade-in-scale stagger-4">
                 <CardContent className="p-6 md:p-8 text-center">
                   <div className="space-y-4 md:space-y-6">
                     <div className="flex items-center justify-center space-x-2">
                       <Target className="h-5 w-5 md:h-6 md:w-6" />
-                      <h3 className="text-base md:text-lg font-black tracking-wide">PERFORMANCE</h3>
+                      <h3 className="text-base md:text-lg font-black tracking-wide performance-text">PERFORMANCE</h3>
                     </div>
                     <div className="space-y-3 md:space-y-4">
                       <div className="flex justify-between items-center">
-                        <span className="text-white/80 text-xs md:text-sm font-medium">This Month</span>
-                        <span className="font-black text-white text-sm md:text-base">+15.2%</span>
+                        <span className="performance-text-muted text-xs md:text-sm font-medium">This Month</span>
+                        <span className="font-black performance-text text-sm md:text-base">+15.2%</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-white/80 text-xs md:text-sm font-medium">Avg. Payment</span>
-                        <span className="font-black text-white text-sm md:text-base">12 days</span>
+                        <span className="performance-text-muted text-xs md:text-sm font-medium">Avg. Payment</span>
+                        <span className="font-black performance-text text-sm md:text-base">12 days</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-white/80 text-xs md:text-sm font-medium">Top Client</span>
-                        <span className="font-black text-white text-sm md:text-base">TechCorp</span>
+                        <span className="performance-text-muted text-xs md:text-sm font-medium">Top Client</span>
+                        <span className="font-black performance-text text-sm md:text-base">TechCorp</span>
                       </div>
                     </div>
                   </div>
