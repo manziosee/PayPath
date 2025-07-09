@@ -78,11 +78,11 @@ export default function ReportsPage() {
                     <Download className="h-4 w-4 mr-2" />
                     EXPORT REPORT
                   </Button>
-                  <Button variant="outline" className="border-2 border-white/20 text-white hover:bg-white/10 px-8 py-4 font-black tracking-widest">
+                  <Button variant="outline" className="reports-btn-light dark:border-white/20 dark:text-white dark:hover:bg-white/10 px-8 py-4 font-black tracking-widest">
                     <Calendar className="h-4 w-4 mr-2" />
                     CUSTOM RANGE
                   </Button>
-                  <Button variant="outline" className="border-2 border-white/20 text-white hover:bg-white/10 px-8 py-4 font-black tracking-widest">
+                  <Button variant="outline" className="reports-btn-light dark:border-white/20 dark:text-white dark:hover:bg-white/10 px-8 py-4 font-black tracking-widest">
                     <Filter className="h-4 w-4 mr-2" />
                     ADVANCED FILTERS
                   </Button>
@@ -205,12 +205,12 @@ export default function ReportsPage() {
             {/* Sidebar */}
             <div className="space-y-8">
               {/* Monthly Goals */}
-              <Card className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-0 glass animate-fade-in-scale stagger-2">
+              <Card className="reports-goals-card text-white border-0 glass animate-fade-in-scale stagger-2">
                 <CardContent className="p-8">
                   <div className="space-y-6">
                     <div className="flex items-center space-x-3">
                       <Target className="h-6 w-6" />
-                      <h3 className="font-black tracking-wide text-lg">MONTHLY GOALS</h3>
+                      <h3 className="font-black tracking-wide text-lg reports-goals-text">MONTHLY GOALS</h3>
                     </div>
                     <div className="space-y-6">
                       {[
@@ -219,9 +219,9 @@ export default function ReportsPage() {
                         { label: "Invoice Volume", value: 78 }
                       ].map((goal, index) => (
                         <div key={index}>
-                          <div className="flex justify-between text-sm mb-3 font-medium">
-                            <span className="text-white/80">{goal.label}</span>
-                            <span className="font-black text-white">{goal.value}%</span>
+                          <div className="flex justify-between text-sm mb-3 font-medium reports-goals-text">
+                            <span className="reports-goals-text-muted">{goal.label}</span>
+                            <span className="font-black reports-goals-text">{goal.value}%</span>
                           </div>
                           <Progress value={goal.value} className="h-3 bg-white/20" />
                         </div>
@@ -311,10 +311,10 @@ export default function ReportsPage() {
                   { title: "Fastest paying client", value: "TechCorp Solutions", subtitle: "Average 2 days", gradient: "from-purple-500 to-pink-500" },
                   { title: "Growth trend", value: "+15.2% MoM", subtitle: "Consistent growth", gradient: "from-pink-500 to-cyan-500" }
                 ].map((insight, index) => (
-                  <div key={index} className={`p-6 bg-gradient-to-r ${insight.gradient} text-white rounded-xl glass hover-lift`}>
-                    <p className="text-sm font-medium text-white/80">{insight.title}</p>
-                    <p className="text-lg font-black text-white">{insight.value}</p>
-                    <p className="text-xs text-white/70 font-medium">{insight.subtitle}</p>
+                  <div key={index} className={`p-6 bg-gradient-to-r ${insight.gradient} rounded-xl glass hover-lift reports-insight-card shadow-lg`}>
+                    <p className="text-sm font-medium text-white/90 reports-insight-text-muted">{insight.title}</p>
+                    <p className="text-lg font-black text-white reports-insight-text">{insight.value}</p>
+                    <p className="text-xs text-white/80 font-medium reports-insight-text-muted">{insight.subtitle}</p>
                   </div>
                 ))}
               </CardContent>
