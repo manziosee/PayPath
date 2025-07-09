@@ -72,7 +72,7 @@ export default function PaymentsPage() {
                 <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 md:gap-6 pt-6 md:pt-8 animate-fade-in-up stagger-2">
                   <Button 
                     variant="outline" 
-                    className="border-2 border-white/20 text-white hover:bg-white/10 font-bold tracking-wide px-6 md:px-8 py-3"
+                    className="export-btn-light dark:border-white/20 dark:text-white dark:hover:bg-white/10 font-bold tracking-wide px-6 md:px-8 py-3"
                   >
                     <Download className="h-4 w-4 mr-2" />
                     EXPORT REPORT
